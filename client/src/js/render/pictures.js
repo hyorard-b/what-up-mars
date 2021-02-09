@@ -12,12 +12,12 @@ const $picturesRightBtn = document.querySelector('.pictures__btn-right');
 // 랜덤 추출 배열을 유지하기 위해 클로저 활용
 const closure = async () => {
   const picturesArray = await makePicturesArray();
+  console.log(picturesArray);
 
   return (index) => {
     const { id, cameraName, roverName, earthDate, image } = picturesArray[
       index
     ];
-
     $image.style.backgroundImage = `url(${image})`;
     $cameraName.textContent = cameraName;
     $roverName.textContent = roverName;

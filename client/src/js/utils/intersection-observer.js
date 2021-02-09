@@ -7,7 +7,6 @@ const addActiveClass = (entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('active');
-      console.log(entry.target);
     }
   })
 };

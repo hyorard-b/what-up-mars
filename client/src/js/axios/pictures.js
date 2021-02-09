@@ -10,7 +10,7 @@ const getRoverImages = async () => {
   const { data } = await axios.get(
     `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${aWeekAgo()}&api_key=cUgR2SIJprvsJ1TzLiL8jobMJxMOhCj7J1JJHIsM`
   );
-
+    console.log(data);
   return data;
 };
 
@@ -23,6 +23,7 @@ const makePicturesArray = async () => {
   for (let i = 0; i < 10; i++) {
     picturesArray.push(photos[getRandomIndex(photos.length)]);
   }
+  console.log(picturesArray);
 
   return picturesArray.map((picture) => ({
     id: picture.id,
